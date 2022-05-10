@@ -2,6 +2,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 import time
 
 
@@ -23,5 +24,8 @@ time.sleep(1)
 #identifica o botão pesquisar e simula o click
 search_button = driver.find_element(By.XPATH, "/html/body/div[1]/header/div[1]/div/div/div[3]/div/div/div[1]/button").click()
 
+time.sleep(5)
 
-
+#filtra o produto pelo "menor preço"
+drop_down = Select(driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div[2]/div[1]/div/div/div/div[2]/select"))
+drop_down.select_by_value("price_asc")
