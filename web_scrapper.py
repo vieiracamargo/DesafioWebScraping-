@@ -29,3 +29,8 @@ time.sleep(5)
 #filtra o produto pelo "menor preço"
 drop_down = Select(driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div[2]/div[1]/div/div/div/div[2]/select"))
 drop_down.select_by_value("price_asc")
+
+time.sleep(5)
+
+#seleciona o primeiro produto
+buy = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div[2]/div[2]/div/div/article[1]/span/a").click()
